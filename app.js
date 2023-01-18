@@ -77,12 +77,12 @@ function validateMessage() {
     console.log(n);
     if (v == "" || val == null) {
         document.getElementById("message-error").style.color = "red";
-        document.getElementById("message-error").innerHTML = "This field must be filled out";
+        document.getElementById("message-error").innerHTML = "**This field must be filled out";
         return false;
    }
     if (n < 20) {
         document.getElementById("message-error").style.color = "red";
-        document.getElementById("message-error").innerHTML = "Message should be atleast 10 letters long";
+        document.getElementById("message-error").innerHTML = "**Message should be atleast 10 letters long";
         return false;
 
 

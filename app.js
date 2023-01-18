@@ -44,7 +44,7 @@ function validateEmail() {
     document.getElementById("mail-error").style.color="green";
  }
  else{
-    document.getElementById("mail-error").innerHTML="**invalid";
+    document.getElementById("mail-error").innerHTML="**invalid email";
     document.getElementById("mail-error").style.visibility="visible";
     document.getElementById("mail-error").style.color="red";
  }
@@ -91,14 +91,14 @@ function validateMessage() {
     document.getElementById("message-error").innerHTML = "Valid";
     return true;
 
-}
+};
 
 
 function validateForm() {
-    if (!validateEmail() || !validateName() || !validateMessage()) {
-        // submitError.style.display='block';
-        // submitError.innerHTML='Please fix error to submit';
-        // setTimeout(function(){submitError.style.display='none';},3000);
+    if (!validateEmail() || !validateName() || !validateMessage() || !validateSubject()) {
+        submitError.style.display='block';
+        submitError.innerHTML='Please fix error to submit';
+        setTimeout(function(){submitError.style.display='none';},3000);
         alert("Please fix the error to submit")
         return  false;    
     }

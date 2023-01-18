@@ -962,10 +962,26 @@ section {
 }
 
 /*# sourceMappingURL=styles.css.map */
-
+.input-control label{
+  font-size: 14px;
+  color:rgb(145, 158, 153);
+}
+#submit-error{
+  color: rgb(145, 158, 153);
+  font-size: 14px;
+}
 
 
 .btn-submit{
-  padding:10px;
-  border-radius: 20px;
+  position: relative;
+  margin: auto;
+  padding: 10px 22px;
+  transition: all .2s ease;
+  border-radius: 17px;
+  border: none;
+  cursor: pointer;
 }
+.btn-submit:hover{
+  background-color: rgb(221, 221, 221);
+}
+

@@ -537,8 +537,8 @@ Thanks to the evolution of website builders, you can design a website and craft 
                         </div>
                     </div>
                     <div class="right-contact">
-                        <!-- -->
-                        <form id="contact-form"  action="https://formsubmit.co/murshidmonzpv@gmail.com" method="POST"                                                                                                                   >
+                
+                        <form id="contact-form" >                                                                                                                  
                             <div class="input-control">
                                 <input type="text" placeholder="YOUR NAME" name="name" id="cname" onblur="return validateName()">
                                 <label id="name-error"></label>
@@ -552,11 +552,11 @@ Thanks to the evolution of website builders, you can design a website and craft 
                                 <label id="subject-error"></label>  
                             </div>                           
                            <div class="input-control">
-                                <textarea name="message" id="cmessage" cols="15" rows="8" placeholder="MESSAGE HERE..." onblur="validateMessage()"></textarea>
+                                <textarea name="message" id="cmessage" cols="15" rows="8" placeholder="MESSAGE HERE..." onblur="return validateMessage()"></textarea>
                                 <label id="message-error"></label>
                             </div>
                             <div class="submit-btn">
-                                <button class="btn-submit" type="submit">SUBMIT</button>
+                                <button class="btn-submit" type="submit" onclick=" return validateForm()">SUBMIT</button>
                                 <label id="submit-error"></label>
                             </div>
                         </form>
@@ -587,5 +587,32 @@ Thanks to the evolution of website builders, you can design a website and craft 
         <i class="fas fa-adjust"></i>
     </div>
     <script src="app.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">
+    </script>
+    
+     <script>
+        $("#contact-form").submit((e) => {
+            e.preventDefault()
+            $.ajax({
+                url: "https://script.google.com/macros/s/AKfycbwgkePeQrylJoGNKcv0uQ_Pc3cJGtKeGWgGFP6tLyPYa9jA-HqgmI3dHkBPhcbjB-z0/exec",
+                data: $("#contact-form").serialize(),
+                method: "post",
+                success: function(response) {
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                       //window.location.href="https://google.com"
+                },
+                error: function(err) {
+                    alert("Something Happened wrong")
+
+                }
+            })
+        })
+    </script>
 </body>
 </html>
